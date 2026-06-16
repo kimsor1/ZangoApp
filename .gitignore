@@ -1,11 +1,15 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# ==========================================
+# SwiftUI / Xcode / macOS 필수 .gitignore
+# ==========================================
 
-## User settings
+## User settings (개발자 개인 설정 및 상태 - 충돌 방지 필수)
 xcuserdata/
+*.xcuserdatad
+*.xcuserstate
 
-## Obj-C/Swift specific
+## Xcode Build Artifacts (빌드 생성 파일 및 캐시)
+build/
+DerivedData/
 *.hmap
 
 ## App packaging
@@ -17,46 +21,37 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
-
+## Swift Package Manager (SPM)
+# 외부 라이브러리 체크아웃 캐시 및 개인 설정 제외
 .build/
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspace
+.swiftpm/xcode/xcuserdata/
 
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
-
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+## CocoaPods & Carthage (사용할 경우를 대비한 클린업)
+Pods/
 Carthage/Build/
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
+## fastlane
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+## macOS 시스템 파일 (Mac 유저 필수!)
+# 폴더 스타일이나 메타데이터를 담고 있는 Mac 임시 파일들입니다.
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotbackup
+
+## 백업 및 개발 도구 캐시
+*~
+*.swp
+*.lock
