@@ -13,11 +13,24 @@ struct AddHistoryView: View {
             HStack{
                 Button(action: {}, label: {
                     Text("수입")
+                        .foregroundStyle(.green)
+                        .overlay(content: {
+                            Rectangle()
+                                .stroke()
+                                .foregroundStyle(.green)
+                        })
                 })
                 
                 
                 Button(action: {}, label: {
                     Text("지출")
+                        .foregroundStyle(.red)
+                        .overlay(content: {
+                            Rectangle()
+                                .stroke()
+                                .foregroundStyle(.red)
+                        })
+                    
                 })
             }
         }
