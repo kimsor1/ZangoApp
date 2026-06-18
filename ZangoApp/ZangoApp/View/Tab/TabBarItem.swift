@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct TabBarItem: View {
+    
     let icon: String
     let label: String
     let tag: Int
+    
     @Binding var selectedTab: Int
     
     var isSelected: Bool { selectedTab == tag }
@@ -25,7 +27,7 @@ struct TabBarItem: View {
                 Text(label)
                     .font(.system(size: 10))
             }
-            .foregroundColor(isSelected ? Color(hex: "1a7a5e") : .gray)
+            .foregroundColor(isSelected ? Color(hex: "00236E") : .gray)
             .frame(maxWidth: .infinity)
         }
     }

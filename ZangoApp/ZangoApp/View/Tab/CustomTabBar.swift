@@ -14,28 +14,28 @@ struct CustomTabBar: View {
     var body: some View {
         HStack {
             TabBarItem(icon: "house.fill", label: "홈", tag: 0, selectedTab: $selectedTab)
+            
             TabBarItem(icon: "list.bullet", label: "내역", tag: 1, selectedTab: $selectedTab)
             
-            // 가운데 + 버튼
             Button {
                 showAddSheet = true
             } label: {
                 Circle()
-                    .fill(Color(hex: "1a7a5e"))
+                    .fill(Color(hex: "00236E"))
                     .frame(width: 52, height: 52)
                     .overlay(Image(systemName: "plus").foregroundColor(.white).font(.title2))
                     .offset(y: -16)
             }
             
             TabBarItem(icon: "chart.pie.fill", label: "리포트", tag: 2, selectedTab: $selectedTab)
+            
+            
             TabBarItem(icon: "gearshape.fill", label: "설정", tag: 3, selectedTab: $selectedTab)
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 8)
         .background(.ultraThinMaterial)
-        .overlay(alignment: .top) {
-            Divider()
-        }
+        .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: -2)
     }
 }
 
